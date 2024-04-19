@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+   <style>
+       table, td, th {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+.tdStyle {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  padding-right: 10px;
+  font-size: 18px;
+}
+
+.tdCenter{
+text-align: center;
+  vertical-align: middle;
+}
+
+td, div{
+word-wrap: break-word;
+}
+   </style>
+</head>
+<body style="padding: 20px">
+<table style="width: 100%">
+    <tr>
+        <td class="tdStyle">Seller:
+            <div th:text="${seller}"></div>
+            <div th:text="${sellerAddress}"></div>
+            <div th:text="${sellerGstin}"></div>
+        </td>
+        <td class="tdStyle">Buyer:
+            <div th:text="${buyer}"></div>
+            <div th:text="${buyerAddress}"></div>
+            <div th:text="${buyerGstin}"></div>
+        </td>
+    </tr>
+</table>
+
+<table style="width: 100%">
+    <tr>
+        <td class="tdCenter" style="width: 40%">Item</td>
+        <td class="tdCenter" style="width: 20%">Quantity</td>
+        <td class="tdCenter" style="width: 20%">Rate</td>
+        <td class="tdCenter" style="width: 20%">Amount</td>
+    </tr>
+
+    <tr th:each="item:${itemList}">
+        <td class="tdCenter" style="width: 40%" th:text="${item.name}"></td>
+        <td class="tdCenter" style="width: 20%" th:text="${item.quantity}"></td>
+        <td class="tdCenter" style="width: 20%" th:text="${item.rate}"></td>
+        <td class="tdCenter" style="width: 20%" th:text="${item.amount}"></td>
+    </tr>
+
+</table>
+</body>
+</html>
