@@ -2,6 +2,7 @@ package com.shivang.Dynamic_pdf.controller;
 
 import com.shivang.Dynamic_pdf.dto.InputDto;
 import com.shivang.Dynamic_pdf.services.PdfGeneratorService;
+import com.shivang.Dynamic_pdf.services.PdfGeneratorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

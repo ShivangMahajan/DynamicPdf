@@ -4,6 +4,7 @@ import com.shivang.Dynamic_pdf.dto.InputDto;
 import com.shivang.Dynamic_pdf.dto.ItemsDTO;
 import com.shivang.Dynamic_pdf.repository.PdfTblRepository;
 import com.shivang.Dynamic_pdf.services.PdfGeneratorService;
+import com.shivang.Dynamic_pdf.services.PdfGeneratorServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,18 +12,13 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.Optional;
-
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class PdfGeneratorServiceTest {
+public class PdfGeneratorServiceImplTest {
 
     @Mock
     PdfTblRepository pdfTblRepository;
@@ -31,7 +27,7 @@ public class PdfGeneratorServiceTest {
 
     @Before
     public void init(){
-        pdfGeneratorService = new PdfGeneratorService(pdfTblRepository);
+        pdfGeneratorService = new PdfGeneratorServiceImpl(pdfTblRepository);
     }
 
     @Test
